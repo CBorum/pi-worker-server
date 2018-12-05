@@ -1,10 +1,12 @@
 version: 2
 jobs:
  build:
-   docker:
-      - image: arm32v6/golang:alpine
+   machine: true
    steps:
      - checkout
+
+     - setup_remote_docker:
+      docker_layer_caching: true
 
      - run: |
          docker login -u $DOCKER_USER -p $DOCKER_PASS
