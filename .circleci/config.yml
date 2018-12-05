@@ -1,0 +1,13 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+
+     - run: |
+         docker login -u $DOCKER_USER -p $DOCKER_PASS
+
+     - run: docker build -t cborum/pi-worker-server .
+
+     - run: docker push cborum/pi-worker-server
