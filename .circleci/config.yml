@@ -1,7 +1,8 @@
 version: 2
 jobs:
  build:
-   machine: true
+   docker:
+      - image: arm32v6/golang:alpine
    steps:
      - checkout
 
