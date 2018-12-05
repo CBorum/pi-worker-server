@@ -9,4 +9,4 @@ jobs:
 
      - run: docker build -t cborum/pi-worker-server .
 
-     - run: docker push cborum/pi-worker-server
+     - run: docker push borum/pi-worker-server
