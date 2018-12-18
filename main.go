@@ -9,7 +9,7 @@ import (
 
 func main() {
 	for true {
-		msg, err := Get("http://206.189.101.6:3000/cdchange")
+		msg, err := Get("http://206.189.101.6:3000/cd123")
 		if err != nil {
 			fmt.Println(err)
 		} else {
