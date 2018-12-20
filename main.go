@@ -4,16 +4,21 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"time"
 )
 
 func main() {
 	for true {
-		msg, err := Get("http://206.189.101.6:3000/cd123")
+		msg := os.Getenv("msg")
+		if msg == "" {
+			msg = "cdcd"
+		}
+		resp, err := Get("http://206.189.101.6:3000/" + msg)
 		if err != nil {
 			fmt.Println(err)
 		} else {
-			fmt.Println("resp:", string(msg))
+			fmt.Println("resp:", string(resp))
 		}
 
 		time.Sleep(10 * time.Second)
