@@ -12,7 +12,7 @@ func main() {
 	for true {
 		msg := os.Getenv("msg")
 		if msg == "" {
-			msg = "cdcd"
+			msg = "cd-change"
 		}
 		resp, err := Get("http://206.189.101.6:3000/" + msg)
 		if err != nil {
